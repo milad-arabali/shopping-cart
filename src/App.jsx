@@ -2,7 +2,7 @@ import './App.css'
 import Header from "./components/layout/Header.jsx";
 import Main from "./components/layout/Main.jsx";
 import Footer from "./components/layout/Footer.jsx";
-import {BrowserRouter} from "react-router-dom";
+import ShoppingList from "./context/shoppingList.jsx";
 
 function App() {
 
@@ -10,9 +10,11 @@ function App() {
     return (
         <>
 
-                <Header/>
+            <Header/>
+            <ShoppingList>
                 <Main/>
-                <Footer/>
+            </ShoppingList>
+            <Footer/>
 
         </>
     )

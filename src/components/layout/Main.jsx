@@ -5,16 +5,18 @@ import DetailPage from "../pages/detailPage.jsx";
 import Checkout from "../pages/Checkout.jsx";
 import NotFindPage from "../pages/notFindPage.jsx";
 
-function Main(props) {
+function Main() {
     return (
         <>
+
             <Routes>
-                <Route path="/" element={<Navigate to="/shopping" replace />} />
-                <Route path="/shopping" element={<Shopping />} />
-                <Route path="/shopping/:id" element={<DetailPage />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/*" element={<NotFindPage />} />
+                <Route path="/" element={<Navigate to="/shopping" replace/>}/>
+                <Route path="/shopping" element={<Shopping/>}/>
+                <Route path="/shopping/:id" element={<DetailPage/>}/>
+                <Route path="/checkout" element={<Checkout/>}/>
+                <Route path="*" element={<NotFindPage/>}/>
             </Routes>
+
 
         </>
 
