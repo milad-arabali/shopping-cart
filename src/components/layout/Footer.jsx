@@ -3,9 +3,8 @@ import React from 'react';
 function Footer(props) {
     return (
         <div
-            className="flex justify-center items-center w-full sm:w-[80%] md:w-[70%]
-            lg:w-[60%] h-[81px] mx-auto mb-5 mt-10 bg-blue-400 rounded-lg shadow-lg">
-            <p className="text-sm text-gray-700  ">
+            className="flex justify-center items-center w-[80%] mx-auto h-[80px] mb-10 mt-5 bg-blue-400 rounded-lg shadow-lg">
+            <p className="text-sm text-white flex items-center">
                 <a
                     href="https://farazcode.ir"
                     target="_blank"
@@ -14,9 +13,13 @@ function Footer(props) {
                 >
                     farazcode.ir
                 </a>
-                ساخته شده توسط
+                <span>ساخته شده توسط</span>
             </p>
         </div>
+
+
+
+
     );
 }
 
