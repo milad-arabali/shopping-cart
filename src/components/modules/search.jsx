@@ -1,20 +1,27 @@
 import React, {useState} from 'react';
 
-function Search() {
-    const [searchText, setSearchText] = useState("");
-
+function Search({setSearchText}) {
+    const [inputValue, setInputValue] = useState("");
     const handleSearch = () => {
+        setSearchText(inputValue);
 
-        console.log("جستجو:", searchText);
-        alert(`در حال جستجوی: ${searchText}`);
+    };
+
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        setInputValue(value);
+
+        if (value.trim() === "") {
+            setSearchText("");
+        }
     };
 
     return (
         <div className="relative flex flex-col sm:w-[300px] md:w-[400px] gap-2 p-2 rounded-lg text-white">
             <div className="flex items-center gap-2">
                 <input
-                    onChange={(e) => setSearchText(e.target.value)}
-                    value={searchText}
+                    onChange={handleInputChange}
+                    value={inputValue}
                     placeholder="Search Product..."
                     type="text"
                     className="p-1 text-gray-900 bg-white rounded-md border
