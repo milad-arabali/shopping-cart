@@ -5,25 +5,27 @@ import Footer from "./components/layout/Footer.jsx";
 import ShoppingList from "./context/shoppingList.jsx";
 import SideBar from "./components/layout/sideBar.jsx";
 import {useState} from "react";
+import {CartProvider} from "./context/cartContext.jsx";
 
 function App() {
     const [searchCategory, setSearchCategory] = useState("");
     return (<>
-        <Header/>
-        <ShoppingList>
-            <div className="flex flex-col lg:flex-row gap-4 px-4 py-6 w-[80%]
+        <CartProvider>
+            <Header/>
+            <ShoppingList>
+                <div className="flex flex-col lg:flex-row gap-4 px-4 py-6 w-[80%]
                 mx-auto bg-white rounded-lg shadow-lg">
-                <main className="flex-1 bg-gray-100 rounded-lg p-4">
-                    <Main searchCategory={searchCategory} setSearchCategory={setSearchCategory}/>
-                </main>
+                    <main className="flex-1 bg-gray-100 rounded-lg p-4">
+                        <Main searchCategory={searchCategory} setSearchCategory={setSearchCategory}/>
+                    </main>
 
-                <aside className="w-full lg:w-[200px] bg-gray-50 rounded-lg p-4">
-                    <SideBar setSearchCategory={setSearchCategory}/>
-                </aside>
-            </div>
-        </ShoppingList>
-        <Footer/>
-
+                    <aside className="w-full lg:w-[200px] bg-gray-50 rounded-lg p-4">
+                        <SideBar setSearchCategory={setSearchCategory}/>
+                    </aside>
+                </div>
+            </ShoppingList>
+            <Footer/>
+        </CartProvider>
 
     </>)
 }
