@@ -10,7 +10,7 @@ function Checkout() {
 
     if (cartItems.length === 0) {
         navigate('/shopping');
-        return null;// تا چیزی رندر نشه بعد از navigate
+        return null;
     }
 
     const handleIncreaseQuantity = (id) => {

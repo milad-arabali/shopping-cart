@@ -10,8 +10,9 @@ import {useLocation} from "react-router-dom";
 
 function App() {
     const [searchCategory, setSearchCategory] = useState("");
-    const location = useLocation();  // برای بررسی مسیر فعلی
-    const isCheckoutPage = location.pathname === "/checkout";  // بررسی اینکه در صفحه checkout هستیم
+    const location = useLocation();
+    const isCheckoutPage = location.pathname === "/checkout";
+    const isDetailPage = location.pathname.startsWith("/shopping/");
 
     return (
         <>
@@ -20,11 +21,10 @@ function App() {
                 <ShoppingList>
                     <div className="flex flex-col lg:flex-row gap-4 px-4 py-6 w-[80%] mx-auto bg-white rounded-lg shadow-lg">
                         <main className="flex-1 bg-gray-100 rounded-lg p-4">
-                            <Main searchCategory={searchCategory} setSearchCategory={setSearchCategory} />
+                            <Main isCheckoutPage={isCheckoutPage} searchCategory={searchCategory} setSearchCategory={setSearchCategory} />
                         </main>
 
-                        {/* اگر در صفحه checkout نیستیم، Sidebar نمایش داده می‌شود */}
-                        {!isCheckoutPage && (
+                        {!isCheckoutPage && !isDetailPage && (
                             <aside className="w-full lg:w-[200px] bg-gray-50 rounded-lg p-4">
                                 <SideBar setSearchCategory={setSearchCategory} />
                             </aside>

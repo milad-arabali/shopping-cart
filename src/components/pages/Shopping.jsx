@@ -11,7 +11,7 @@ function Shopping({searchCategory}) {
     const [searchText, setSearchText] = useState("");
     const [category, setCategory] = useState(searchCategory);
     const navigate = useNavigate();
-
+    console.log("dd",products);
     const filteredProducts = products.filter(product => {
         const matchCategory =
             !category || category === "" || category === "all"

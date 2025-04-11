@@ -21,7 +21,14 @@ const ProductCard = ({data}) => {
             <div className="rounded-xl overflow-hidden shadow-lg bg-white p-4 h-[460px] flex flex-col justify-between">
                 <img className="w-full h-40 object-cover" src={image} alt={title}/>
                 <div className="py-2 flex-grow">
-                    <h2 className="text-lg font-semibold line-clamp-2">{title}</h2>
+                    <h2 className="text-lg font-semibold line-clamp-2">
+                        <Link
+                            to={`/shopping/${id}`}
+                            className="text-blue-600 hover:underline"
+                        >
+                            {title}
+                        </Link>
+                    </h2>
                     <p className="text-gray-600 text-xs mt-1 line-clamp-2">{description}</p>
                     <p className="text-xs text-gray-500">Category: {category}</p>
                 </div>
